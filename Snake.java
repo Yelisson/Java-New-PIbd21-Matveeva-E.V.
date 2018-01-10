@@ -1,4 +1,4 @@
-package progrLab5;
+package progrLab6_new;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -8,6 +8,8 @@ public abstract class Snake implements Interface1 {
 	public abstract void drawAnimal(Graphics g);
 
 	public abstract void moveAnimal(Graphics g);
+	
+	public abstract String getInfo();
 
 	protected int startPosX;
 	protected int startPosY;

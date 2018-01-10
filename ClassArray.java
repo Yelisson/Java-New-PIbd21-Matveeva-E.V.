@@ -1,11 +1,11 @@
-package progrLab5;
+package progrLab6_new;
 
-import java.util.Dictionary;
+import java.io.Serializable;
 import java.util.Hashtable;
 
-public class ClassArray<T> {
+public class ClassArray<T extends Interface1> implements Serializable  {
 
-	private Dictionary<Integer, T> places;
+	private Hashtable<Integer, T> places;
 	private T defaultValue;
 	private int maxCount;
 
@@ -48,5 +48,4 @@ public class ClassArray<T> {
 			return places.get(ind);
 		return defaultValue;
 	}
-
 }

@@ -1,11 +1,10 @@
-package progrLab5;
+package progrLab6_new;
 
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
 public class TerrariumPanel extends JPanel {
-
 	private Terrarium terrarium;
 
 	public TerrariumPanel(Terrarium ter) {

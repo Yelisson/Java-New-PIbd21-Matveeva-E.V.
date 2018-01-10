@@ -1,9 +1,13 @@
-package progrLab5;
+package progrLab6_new;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
-public class PoisonousSnake extends Snake {
+public class PoisonousSnake extends Snake implements Serializable  {
 
 	private int countPoison;
 
@@ -16,8 +20,8 @@ public class PoisonousSnake extends Snake {
 		this.ColorBody1 = color1;
 		this.ColorBody2 = color2;
 		this.height = height;
-		this.countMouse = 0;
-		this.countBirds = 0;
+		this.countMouse=0;
+		this.countBirds=0;
 		startPosX = 60;
 		startPosY = 60;
 	}
@@ -109,4 +113,33 @@ public class PoisonousSnake extends Snake {
 			super.setHeight(500);
 		}
 	}
+	
+	@Override
+ 	public String getInfo() {
+ 		// TODO Auto-generated method stub
+ 		return maxSpeed + ";" + maxCountMouse + ";" + maxCountBirds + ";" + height + ";" + ColorBody1+";"+ColorBody2;
+ 
+ 	}
+ 	
+ 	private void writeObject(ObjectOutputStream s) throws IOException {
+         s.defaultWriteObject();
+         s.writeInt(ColorBody1.getRed());
+         s.writeInt(ColorBody1.getGreen());
+         s.writeInt(ColorBody1.getBlue());
+       	s.writeInt(ColorBody2.getRed());
+		s.writeInt(ColorBody2.getGreen());
+		s.writeInt(ColorBody2.getBlue());
+     }
+ 
+     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+         s.defaultReadObject();
+         int red = s.readInt();
+         int green = s.readInt();
+         int blue = s.readInt();
+         ColorBody1 = new Color(red, green, blue);
+     	int red1 = s.readInt();
+		int green1 = s.readInt();
+		int blue1 = s.readInt();
+		ColorBody2 = new Color(red1, green1, blue1);
+     }
 }

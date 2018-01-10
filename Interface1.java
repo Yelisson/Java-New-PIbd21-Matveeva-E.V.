@@ -1,4 +1,4 @@
-package progrLab5;
+package progrLab6_new;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -18,4 +18,6 @@ public interface Interface1 {
 	void setMainColor(Color color);
 
 	void setDopColor(Color color);
+	
+	String getInfo();
 }

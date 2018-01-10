@@ -1,42 +1,28 @@
-package progrLab5;
+package progrLab6_new;
 
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.TransferHandler;
-
-import java.awt.Color;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.SystemColor;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.dnd.DnDConstants;
 import java.awt.dnd.DropTarget;
 import java.awt.dnd.DropTargetDragEvent;
 import java.awt.dnd.DropTargetDropEvent;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.io.IOException;
 
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.TransferHandler;
+
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.io.IOException;
+import java.awt.event.ActionEvent;
 
 public class SelectSnake extends JDialog {
 
@@ -46,10 +32,10 @@ public class SelectSnake extends JDialog {
 
 	Color color;
 	Color dopColor;
-	int maxCountMouse;
-	int maxCountBirds;
-	int maxSpeed;
-	int height;
+	int maxCountMouse=20;
+	int maxCountBirds=30;
+	int maxSpeed=150;
+	int height=15;
 
 	public SelectSnake(JFrame parent) {
 		super(parent, true);
@@ -351,4 +337,5 @@ public class SelectSnake extends JDialog {
 
 		return null;
 	}
+
 }
