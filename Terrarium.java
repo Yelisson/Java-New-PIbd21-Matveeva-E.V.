@@ -1,32 +1,56 @@
-package progrLab3;
+package progrLab4;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Terrarium {
 
-	ClassArray<Interface1> terrarium;
+	List<ClassArray<Interface1>> terrariumStages;
 	int countPlaces = 4;
 	int placeSizeWidth = 270;
 	int placeSizeHeight = 182;
+	int currentLevel;
 
-	
-	public Terrarium() {
-	    terrarium = new ClassArray<Interface1>(countPlaces,null);
+	public Terrarium(int countLevels) {
+		terrariumStages = new ArrayList<ClassArray<Interface1>>();
+		for (int i = 0; i < countLevels; i++) {
+			terrariumStages.add(new ClassArray<Interface1>(countPlaces, null));
+		}
+		currentLevel = 0;
+	}
+
+	public int GetCurrentLevel() {
+		return currentLevel;
+	}
+
+	public void levelUp() {
+		if (currentLevel + 1 < terrariumStages.size()) {
+			currentLevel++;
+		}
+	}
+
+	public void levelDown() {
+    	 		if (currentLevel > 0) {
+    	 			currentLevel--;
+    	 		}
+	}
+		
+	public int putSnakeInTerrarium(Interface1 snake)
+	{
+		return terrariumStages.get(currentLevel).add(terrariumStages.get(currentLevel), snake);
 	}
 	
-	public int putSnakeInTerrarium(Interface1 PoisonousSnake) {
-		return terrarium.add(terrarium, PoisonousSnake);
-	}
-
-	public Interface1 getSnakeInTerrarium(int number) {
-		return terrarium.dec(terrarium, number);
-	}
-
+	public Interface1 getSnakeInTerrarium(int index)
+	{
+		return terrariumStages.get(currentLevel).dec(terrariumStages.get(currentLevel), index);
+	}	
+	
 	public void Draw(Graphics g) {
 		DrawMarking(g);
 		for (int i = 0; i < countPlaces; i++) {
-			Interface1 PoisonousSnake = terrarium.getObject(i);
+			Interface1 PoisonousSnake = terrariumStages.get(currentLevel).getSnake(i);
 			if (PoisonousSnake != null) {
 				PoisonousSnake.setPosition(35 + i / 2 * placeSizeWidth + 35, i % 2 * placeSizeHeight + 75);
 				PoisonousSnake.drawAnimal(g);
@@ -44,5 +68,4 @@ public class Terrarium {
 			g.drawLine(i * placeSizeWidth, 0, i * placeSizeWidth, 370);
 		}
 	}
-
 }

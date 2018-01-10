@@ -1,9 +1,8 @@
-package progrLab3;
+package progrLab4;
 
 import java.awt.Graphics;
 
 public interface Interface1 {
-
 
 	void drawAnimal(Graphics g);
     void moveAnimal(Graphics g);

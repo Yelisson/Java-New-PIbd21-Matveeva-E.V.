@@ -1,6 +1,7 @@
-package progrLab3;
+package progrLab4;
 
 import java.awt.Graphics;
+
 import javax.swing.JPanel;
 
 public class SnakePanel extends JPanel {
