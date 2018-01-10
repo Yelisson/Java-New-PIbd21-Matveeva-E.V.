@@ -1,4 +1,4 @@
-package progrLab4;
+package progrLab5;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -32,21 +32,19 @@ public class Terrarium {
 	}
 
 	public void levelDown() {
-    	 		if (currentLevel > 0) {
-    	 			currentLevel--;
-    	 		}
+		if (currentLevel > 0) {
+			currentLevel--;
+		}
 	}
-		
-	public int putSnakeInTerrarium(Interface1 snake)
-	{
+
+	public int putSnakeInTerrarium(Interface1 snake) {
 		return terrariumStages.get(currentLevel).add(terrariumStages.get(currentLevel), snake);
 	}
-	
-	public Interface1 getSnakeInTerrarium(int index)
-	{
+
+	public Interface1 getSnakeInTerrarium(int index) {
 		return terrariumStages.get(currentLevel).dec(terrariumStages.get(currentLevel), index);
-	}	
-	
+	}
+
 	public void Draw(Graphics g) {
 		DrawMarking(g);
 		for (int i = 0; i < countPlaces; i++) {
