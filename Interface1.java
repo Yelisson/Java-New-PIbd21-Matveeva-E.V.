@@ -1,4 +1,4 @@
-package progrLab2New;
+package progrLab3;
 
 import java.awt.Graphics;
 
