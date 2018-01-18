@@ -70,4 +70,5 @@ public class Kobra extends PoisonousSnake implements Serializable {
 				+ ColorBody2;
 
 	}
+
 }
