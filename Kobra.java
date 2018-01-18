@@ -37,7 +37,5 @@ public class Kobra extends PoisonousSnake {
 		g.drawLine(startPosX - 20, startPosY - 25, startPosX - 25, startPosY - 26);
 		g.drawLine(startPosX - 20, startPosY - 25, startPosX - 16, startPosY - 21);
 	}
-	/*
-	 * public void setDopColor(Color f) { dopColor = f; }
-	 */
+
 }
